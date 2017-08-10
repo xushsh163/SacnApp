@@ -42,7 +42,9 @@ export class AppComponent {
         message: "Format: " + result.format + ",\nValue: " + result.text,
         okButtonText: "OK"
       });
-      this.bscanner.stop();
+      setTimeout( () => {
+        this.bscanner.stop();
+      }, 5000);    
     },
     closeCallback: function () { console.log("Scanner closed"); }, // invoked when the scanner was closed (success or abort)
     resultDisplayDuration: 500,   // Android only, default 1500 (ms), set to 0 to disable echoing the scanned text
